@@ -1,0 +1,59 @@
+body * {
+  box-sizing: border-box;
+}
+
+
+header {
+  padding: 80px 20px;
+  background: #4892cb;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+.column {
+  margin-bottom: 20px;
+  float: left;
+}
+
+.sidebar-column {
+  float: left;
+}
+
+.column-1 {
+  width: 30%;
+}
+
+.column-3 {
+  width: 25%;
+}
+
+.sidebar-column div {
+  background: #d0dee8;
+  border: 5px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.primary-column {
+  float: left;
+  padding: 20px 20px 20px 20px;
+  width: 45%;
+  
+}
+
+
+
+
+footer {
+  clear: both;
+  padding: 80px 20px;
+  background: #276697;
+  color: #fff;
+}

@@ -1,0 +1,27 @@
+
+@media (min-width: 768px) {
+  .sticky-parent {
+    min-height: 1px;
+    position: relative;
+  }
+
+  .fixed {
+    position: fixed;
+    bottom: 0;
+  }
+
+  .fixed-top {
+    position: fixed;
+    top: 0;
+  }
+
+
+  .fixed-bottom {
+    position: absolute;
+    bottom: auto;
+  }
+
+  .sticky-wrapper {
+    min-height: 5px;
+  }
+}
