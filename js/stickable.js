@@ -1,4 +1,4 @@
-//9-5 plus four Pennies
+//95 plus four Pennies
 
 (function($) {
   $.fn.stickable = function(args) {
