@@ -4,8 +4,8 @@
   $.fn.stickable = function(args) {
 
     var options = {
-      margin : 0, //Pass a valid function through args
-      bottomId : null, //Pass an invalid function through args
+      margin : 0, 
+      bottomId : null, 
       stickyBreakpoint : 768 // Anything below this number stickable is disabled
     };
 
@@ -30,7 +30,6 @@
       isTouch      = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
 
-      console.log('isTouch: ' + isTouch);
 
     /*method that can reset all the demensions for the plugin. useful if anything changes the 
     dimensions of the page or the sticky Element. */
@@ -88,7 +87,6 @@
         stickyActive = true;
         $elParents.addClass('sticky-parent');
         $el.outerWidth($elParents.outerWidth());
-        console.log($elParents.outerWidth());
         if ((elHeight + (options.margin * 2)) < winHeight) {
           fixedTop = true;
         } else {
@@ -110,7 +108,6 @@
       //called to reinit and fix stuff when you resize you sticky sidebar. 
       var stickyResize = function(){
         winWidth = $window.width();
-        console.log('got here;');
         if (winWidth >= options.stickyBreakpoint) {
           $(this).stickable.reset();
           //continue we are at a larger screen
