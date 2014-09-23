@@ -7,5 +7,10 @@
   "ignore": [
     "bower.json",
     "index.html"
+  ],
+  "keywords": [
+    "sticky",
+    "fixed",
+    "stick on scroll"
   ]
 }
