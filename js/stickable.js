@@ -15,7 +15,7 @@
     }   
 
     var $el = this, 
-      $elParents = $el.parents(),
+      $elParent = $el.parent(),
       $window = $(window), 
       $bottom = $('#' + options.bottomId), 
       windowTop = $window.scrollTop(), 
@@ -23,7 +23,7 @@
       fixedTop = true, 
       winHeight = $window.height(), 
       winWidth = $window.width(),  
-      elOffset = $el.parent().offset().top, 
+      elOffset = $elParent.offset().top, 
       elHeight = $el.outerHeight(), 
       fixedStart = elOffset + elHeight - winHeight + options.margin, 
       bottomOffset = $bottom.offset().top,
@@ -85,8 +85,8 @@
       //initSticky() function that initializes stickable
       var initSticky = function() {
         stickyActive = true;
-        $elParents.addClass('sticky-parent');
-        $el.outerWidth($elParents.outerWidth());
+        $elParent.addClass('sticky-parent');
+        $el.outerWidth($elParent.outerWidth());
         if ((elHeight + (options.margin * 2)) < winHeight) {
           fixedTop = true;
         } else {
@@ -116,7 +116,7 @@
             initSticky();
           } else {
             //just resizing no biggie            
-            $el.width($elParents.width());
+            $el.width($elParent.width());
           }
         } else if (winWidth < options.stickyBreakpoint && stickyActive === true) {
           destroySticky();
