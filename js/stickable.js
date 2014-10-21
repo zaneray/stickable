@@ -52,8 +52,11 @@
            ********************************************/
           if (elOffset < windowTop + options.margin) {
             if ((windowTop + elHeight + options.margin + options.margin) > bottomOffset) {
-              $el.addClass('fixed-bottom').removeClass('fixed-top').css('top', +parseInt(bottomOffset - elHeight - elOffset - options.margin) + 'px');
-            } else {
+              $el.addClass('fixed-bottom').removeClass('fixed-top').css({
+                'top': parseInt(bottomOffset - elHeight - elOffset - options.margin) + 'px',
+                'bottom': 'auto'
+              });
+            } else { 
               $el.addClass('fixed-top').removeClass('fixed-bottom').css('top', options.margin + 'px');
             }
           } else {
@@ -68,7 +71,10 @@
           //fix  to the bottom if it is taller than the window
           if (fixedStart < windowTop) {
             if (windowTop + winHeight > bottomOffset) {
-              $el.addClass('fixed-bottom').removeClass('fixed').css('top', +parseInt(bottomOffset - elHeight - elOffset - options.margin) + 'px');
+                $el.addClass('fixed-bottom').removeClass('fixed-top').css({
+                  'top': parseInt(bottomOffset - elHeight - elOffset - options.margin) + 'px',
+                  'bottom': 'auto'
+                });
             } else {
               $el.addClass('fixed').removeClass('fixed-bottom').css('top', 'auto').css('bottom', options.margin + 'px');
             }
@@ -135,7 +141,7 @@
       scrollSticky();
     }
 
-    //resize with a simple debounce function built in.
+    //resize with a simple throttling function built in.
     if(isTouch){
       var resizeTimeout;
       $window.on('resize orientationchange', function(){
