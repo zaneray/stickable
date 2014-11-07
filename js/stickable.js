@@ -4,15 +4,28 @@
   $.fn.stickable = function(args) {
 
     var options = {
-      margin : 0, 
+      margin : 0,
+      marginTop: null,
+      marginBottom: null,
       bottomId : null, 
       stickyBreakpoint : 768 // Anything below this number stickable is disabled
     };
 
+
+
     $.extend(options, args);
     if (options.bottomId === null) {
       alert('Please specify a bottomId');
-    }   
+    }  
+
+    //set the top and bottom values to .margin
+    if(options.marginTop === null) {
+      options.marginTop = options.margin;
+    }
+
+    if(options.marginBottom === null) {
+      options.marginBottom = options.margin;
+    }  
 
     var $el = this, 
       $elParent = $el.parent(),
@@ -24,11 +37,12 @@
       winHeight = $window.height(), 
       winWidth = $window.width(),  
       elOffset = $elParent.offset().top, 
-      elHeight = $el.outerHeight(), 
-      fixedStart = elOffset + elHeight - winHeight + options.margin, 
+      elHeight = $el.outerHeight(),
+      fixedStart = elOffset + elHeight - winHeight + options.marginBottom; 
       bottomOffset = $bottom.offset().top,
       isTouch      = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
+      
 
 
     /*method that can reset all the demensions for the plugin. useful if anything changes the 
@@ -37,7 +51,7 @@
       elHeight = $el.outerHeight();
       elOffset = $el.parent().offset().top;
       bottomOffset = $bottom.offset().top; 
-      fixedStart = elOffset + elHeight - winHeight + options.margin;
+      fixedStart = elOffset + elHeight - winHeight + options.marginBottom;
     };
 
     if (this.length > 0) {
@@ -50,17 +64,20 @@
            fix only to the top if it is shorter
            than the window
            ********************************************/
-          if (elOffset < windowTop + options.margin) {
-            if ((windowTop + elHeight + options.margin + options.margin) > bottomOffset) {
-              $el.addClass('fixed-bottom').removeClass('fixed-top').css({
-                'top': parseInt(bottomOffset - elHeight - elOffset - options.margin) + 'px',
+          if (elOffset < windowTop + options.marginTop) {
+            if ((windowTop + elHeight + options.marginTop + options.marginBottom) > bottomOffset) {
+
+              console.log('got in here');
+
+              $el.addClass('stickable-fixed-bottom').removeClass('stickable-fixed-top').css({
+                'top': parseInt(bottomOffset - elHeight - elOffset - options.marginBottom) + 'px',
                 'bottom': 'auto'
               });
             } else { 
-              $el.addClass('fixed-top').removeClass('fixed-bottom').css('top', options.margin + 'px');
+              $el.addClass('stickable-fixed-top').removeClass('stickable-fixed-bottom').css('top', options.marginTop + 'px');
             }
           } else {
-            $el.removeClass('fixed-top').removeClass('fixed-bottom').css('top', 'auto');
+            $el.removeClass('stickable-fixed-top').removeClass('stickable-fixed-bottom').css('top', 'auto');
           }
         } else {
           /********************************************
@@ -71,15 +88,15 @@
           //fix  to the bottom if it is taller than the window
           if (fixedStart < windowTop) {
             if (windowTop + winHeight > bottomOffset) {
-                $el.addClass('fixed-bottom').removeClass('fixed-top').css({
-                  'top': parseInt(bottomOffset - elHeight - elOffset - options.margin) + 'px',
+                $el.addClass('stickable-fixed-bottom').removeClass('stickable-fixed-top').css({
+                  'top': parseInt(bottomOffset - elHeight - elOffset - options.marginBottom) + 'px',
                   'bottom': 'auto'
                 });
             } else {
-              $el.addClass('fixed').removeClass('fixed-bottom').css('top', 'auto').css('bottom', options.margin + 'px');
+              $el.addClass('stickable-fixed').removeClass('stickable-fixed-bottom').css('top', 'auto').css('bottom', options.marginBottom + 'px');
             }
           } else {
-            $el.removeClass('fixed').removeClass('fixed-bottom').css({
+            $el.removeClass('stickable-fixed').removeClass('stickable-fixed-bottom').css({
               'top' : 'auto',
               'bottom' : 'auto'
             });
@@ -91,9 +108,9 @@
       //initSticky() function that initializes stickable
       var initSticky = function() {
         stickyActive = true;
-        $elParent.addClass('sticky-parent');
+        $elParent.addClass('stickable-parent');
         $el.outerWidth($elParent.outerWidth());
-        if ((elHeight + (options.margin * 2)) < winHeight) {
+        if ((elHeight + (options.marginTop  + options.marginBottom)) < winHeight) {
           fixedTop = true;
         } else {
           fixedTop = false;
