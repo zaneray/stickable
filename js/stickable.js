@@ -66,9 +66,6 @@
            ********************************************/
           if (elOffset < windowTop + options.marginTop) {
             if ((windowTop + elHeight + options.marginTop + options.marginBottom) > bottomOffset) {
-
-              console.log('got in here');
-
               $el.addClass('stickable-fixed-bottom').removeClass('stickable-fixed-top').css({
                 'top': parseInt(bottomOffset - elHeight - elOffset - options.marginBottom) + 'px',
                 'bottom': 'auto'
