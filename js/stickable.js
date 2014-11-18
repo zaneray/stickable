@@ -42,17 +42,34 @@
       bottomOffset = $bottom.offset().top,
       isTouch      = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
+    var destroySticky = function() {
+      //note don't set any other inline styles on this baby or it will screw everything up
+      stickyActive = false;
+      $el.removeAttr('style').removeClass("stickable-fixed-bottom").removeClass("stickable-fixed-top").removeClass("stickable-fixed");
+      $elParent.removeClass("stickable-parent");
+      $window.off('scroll', scrollSticky);
+    };
       
-
+    var wordcheck = null;
 
     /*method that can reset all the demensions for the plugin. useful if anything changes the 
     dimensions of the page or the sticky Element. */
-    $.fn.stickable.reset = function() {
+    $.fn.stickable.reset = function(newBottom) {
       elHeight = $el.outerHeight();
       elOffset = $el.parent().offset().top;
-      bottomOffset = $bottom.offset().top; 
+      if ( newBottom != null ) {
+        bottomOffset = $("#"+newBottom).offset().top;
+      }
+      else{
+        bottomOffset = $bottom.offset().top; 
+      }
       fixedStart = elOffset + elHeight - winHeight + options.marginBottom;
     };
+
+    /*method to destroy stickable altogether */
+    $.fn.stickable.destroy = function() {
+      destroySticky();
+    }
 
     if (this.length > 0) {
       
@@ -116,14 +133,6 @@
         $window.on('scroll', scrollSticky);
       };
       //end initSticky();
-
-      var destroySticky = function() {
-        //note don't set any other inline styles on this baby or it will screw everything up
-        stickyActive = false;
-        $el.removeAttr('style');
-        $window.off('scroll', scrollSticky);
-      };
-
 
       //called to reinit and fix stuff when you resize you sticky sidebar. 
       var stickyResize = function(){
