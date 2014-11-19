@@ -8,25 +8,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
-  <link rel="stylesheet" href="../css/demo.css">
-  <link rel="stylesheet" href="../css/stickable.css">
+  <link rel="stylesheet" href="css/demo.css">
+  <link rel="stylesheet" href="css/stickable.css">
 </head>
 <body>
 <header>
-  <div class="container">
-  stickable.js
-  </div>
+  <h1>stickable.js</h1>
 </header>
+<a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
   <div class="container">
     <div class="sidebar-column column-1">
       <div id="short-column">
-        <h1>First Column: Short</h1>
-        Aliquam scelerisque dolor vel arcu viverra ultrices. Nulla faucibus, magna vitae vulputate sollicitudin, leo urna vehicula nibh, et convallis neque sapien quis erat. Integer vel luctus dolor. Nam malesuada nulla pellentesque felis congue ornare. Morbi consequat.
+        <h2>First Column: Short</h2>
+        This div should only stick to the top as it is too short to stick to bottom and top.  Nulla faucibus, magna vitae vulputate sollicitudin, leo urna vehicula nibh, et convallis neque sapien quis erat. Integer vel luctus dolor. Nam malesuada nulla pellentesque felis congue ornare. Morbi consequat.
       </div>
     </div>
     <div class="primary-column">
-      <h1>Primary Content</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor varius cursus. Suspendisse dignissim feugiat odio, at laoreet felis lobortis pulvinar. Nullam porta tempor viverra. Ut quis ex eu nunc hendrerit feugiat. Proin viverra, neque et convallis volutpat, risus sapien convallis nulla, id volutpat mi nisl in nisl. Etiam placerat vehicula tellus a posuere. Phasellus fermentum luctus sem id lobortis. Integer lectus mi, dignissim non mi eget, eleifend mattis eros. Aliquam rhoncus mi ac magna hendrerit ornare. Phasellus libero est, volutpat nec leo euismod, commodo consectetur dolor. Sed venenatis lacinia sollicitudin. Praesent vulputate dolor felis, ut ullamcorper erat pulvinar non. Aliquam scelerisque lacus rhoncus, sollicitudin ligula ornare, ornare ex. Vivamus sed lorem aliquam, tincidunt metus quis, interdum erat. Suspendisse potenti.</p>
+      <h2>Primary Content</h2>
+      <p>Stickable.js is a fixed position responsive sidebar that solves a lot of the problems we've run into with all the other plugins we've used in the past. 
+      <ul>
+        <li>It's responsive out of the box</li>
+        <li>It has simple methods to reset the fixed positioning to account for changes in the DOM.</li>
+        <li>It has start and stop setting for fixed positioning (see right hand sidebar)</li>
+        <li>It has an intutive scrolling behavior that follows the directions your are scrolling</li> 
+      </ul>
+      <p><strong>We'll be posting more soon but check out the source of this page to see how it works</strong></p>
 
       <p>Aliquam scelerisque dolor vel arcu viverra ultrices. Nulla faucibus, magna vitae vulputate sollicitudin, leo urna vehicula nibh, et convallis neque sapien quis erat. Integer vel luctus dolor. Nam malesuada nulla pellentesque felis congue ornare. Morbi consequat, magna in finibus tincidunt, ante erat facilisis tortor, non posuere nisl arcu sagittis elit. Sed sed mattis purus. Sed in velit sapien. Pellentesque vel placerat dolor. Vestibulum in nisi diam. Etiam condimentum dui felis, ut ultricies magna porta eget. Quisque eros risus, pretium at purus quis, facilisis posuere odio. Morbi pharetra iaculis elit ac venenatis. Donec varius semper nisi ac congue.</p>
       <p><img src="http://photos-g.ak.instagram.com/hphotos-ak-xpf1/10413977_724169420969542_2011213810_n.jpg"></p>
@@ -58,7 +64,7 @@
     </div>
     <div class="sidebar-column column-3">
       <div id="long-column">
-        <h1>Third Column: Long</h1>
+        <h2>Third Column: Long</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor varius cursus. Suspendisse dignissim feugiat odio, at laoreet felis lobortis pulvinar. Nullam porta tempor viverra. Ut quis ex eu nunc hendrerit feugiat. Proin viverra, neque et convallis volutpat, risus sapien convallis nulla, id volutpat mi nisl in nisl. Etiam placerat vehicula tellus a posuere. Phasellus fermentum luctus sem id lobortis. Integer lectus mi, dignissim non mi eget, eleifend mattis eros. Aliquam rhoncus mi ac magna hendrerit ornare. Phasellus libero est, volutpat nec leo euismod, commodo consectetur dolor. Sed venenatis lacinia sollicitudin. Praesent vulputate dolor felis, ut ullamcorper erat pulvinar non. Aliquam scelerisque lacus rhoncus, sollicitudin ligula ornare, ornare ex. Vivamus sed lorem aliquam, tincidunt metus quis, interdum erat. Suspendisse potenti.</p>
         <p><img src="http://photos-b.ak.instagram.com/hphotos-ak-xpa1/10683935_1496983817208289_2002433346_n.jpg"></p>
 
@@ -73,7 +79,7 @@
   </div>
 <footer id="footer">
   Brought to you by the folks at<br>
-  <a href="http://www.zaneray.com"><img src="http://zaneray.github.io/scrupulous/images/ZR-logo.png" alt="The ZaneRay Group"></a> 
+  <a href="http://www.zaneray.com"><img src="demo/images/ZR-logo-white.png" alt="The ZaneRay Group"></a> 
 </footer>
 
 
@@ -81,7 +87,7 @@
 <div class="background"></div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="../js/stickable.js"></script>
+    <script src="js/stickable.js"></script>
     <script>
       $(window).load(function(){
         $('#short-column').stickable({

@@ -5,7 +5,7 @@
     position: relative;
   }
 
-  .stickable-fixed {
+  .stickable-fixed-bottom {
     position: fixed;
     bottom: 0;
   }
@@ -16,7 +16,7 @@
   }
 
 
-  .stickable-fixed-bottom {
+  .stickable-absolute {
     position: absolute;
     bottom: auto;
   }
