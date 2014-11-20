@@ -12,6 +12,11 @@ body * {
   font-family: 'Quattrocento Sans', sans-serif;
 }
 
+p {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
 .background {
   background: url(../demo/images/bg.jpg) no-repeat 50% 50%;
   background-size: cover;
@@ -87,7 +92,7 @@ h2:first-of-type {
   width: 25%;
 }
 
-.sidebar-column div {
+.sidebar-column > div {
   background: rgba(13,23,32,.8);
   border: 1px solid rgba(255,255,255,.8);
   padding: 20px;
@@ -114,4 +119,47 @@ footer {
   background: rgba(13,23,32,.8);
   padding: 80px 20px;
   text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.block {
+  display: block;
+  white-space: normal;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  background: #1f7d93;
+  padding: 6px 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+hr {
+  border-style: none;
+  border-top: 1px solid #fff;
+}
+
+code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  padding: 3px 5px;
+  font-size: 90%;
+  color: #0d1720;
+  background-color: rgba(255,255,255,.6);
+  white-space: nowrap;
+  text-shadow: none;
+  border-radius: 2px;
 }
