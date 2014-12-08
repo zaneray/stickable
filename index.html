@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Stickable.js - Flexible Mobile Aware Fixed Positioning</title>
+  <meta name="description" content="stickable.js demo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" href="css/demo.css">
+  <link rel="stylesheet" href="css/stickable.css">
+</head>
+<body>
+<header>
+  <h1>stickable.js</h1>
+</header>
+<a href="https://github.com/zaneray/stickable"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  <div class="container">
+    <div class="sidebar-column column-1">
+      <div id="short-column">
+        <h2>First Column: Short</h2>
+        <p>This div should only stick to the top as it is too short to stick to bottom and top.</p>
+        <p>It uses the following code:
+        <p>
+        <code class="block">
+          $('#short-column').stickable({<br>
+            margin: 20,<br>
+            bottomId: 'footer'<br>
+          });
+        </code>
+        </p>
+
+      </div>
+    </div>
+    <div class="primary-column">
+      <h2>Introduction</h2>
+      <p>Stickable.js is a fixed position responsive sidebar that solves a lot of the problems we've run into with all the other plugins we've used in the past. 
+      <ul>
+        <li>It's responsive out of the box</li>
+        <li>It has simple methods to reset the fixed positioning to account for changes in the DOM.</li>
+        <li>It has start and stop setting for fixed positioning (see right hand sidebar)</li>
+        <li>It has an intutive scrolling behavior that follows the directions your are scrolling</li> 
+      </ul>
+      <p>We'll be posting more soon but check out the source of this page to see how it works</p>
+      <p class="center"><a href="https://github.com/zaneray/stickable" class="btn">View the Project on GitHub</a></p>
+      <hr>
+      <h3 class="center">Demo of element dimensions changing</h3>
+      <p class="center"><a href="#" class="expand btn">Expand</a></p>
+      <div class="hidden"><img src="http://photos-a.ak.instagram.com/hphotos-ak-xpa1/926713_1439430279633752_529526578_n.jpg"></div>
+      <p>In order to adjust the dimensions for stickable functionality you must call the following code after dimensions set typically in a callback if there is animation.</p>
+      <p class="center"><code>$('#id-of-element').stickable.reset();</code></p>
+      <hr>
+      <p>Aliquam scelerisque dolor vel arcu viverra ultrices. Nulla faucibus, magna vitae vulputate sollicitudin, leo urna vehicula nibh, et convallis neque sapien quis erat. Integer vel luctus dolor. Nam malesuada nulla pellentesque felis congue ornare. Morbi consequat, magna in finibus tincidunt, ante erat facilisis tortor, non posuere nisl arcu sagittis elit. Sed sed mattis purus. Sed in velit sapien. Pellentesque vel placerat dolor. Vestibulum in nisi diam. Etiam condimentum dui felis, ut ultricies magna porta eget. Quisque eros risus, pretium at purus quis, facilisis posuere odio. Morbi pharetra iaculis elit ac venenatis. Donec varius semper nisi ac congue.</p>
+      <p><img src="http://photos-g.ak.instagram.com/hphotos-ak-xpf1/10413977_724169420969542_2011213810_n.jpg"></p>
+      <p>Vestibulum pharetra turpis urna, nec fringilla eros bibendum mattis. Duis hendrerit turpis metus, a rhoncus neque vestibulum tincidunt. Morbi fringilla justo nec eros ornare vehicula ut id ipsum. Mauris eu ultrices mi. Aenean sed sapien nisi. Pellentesque tempus auctor nulla id venenatis. Ut mattis nulla et enim rutrum mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce tincidunt at nisi eget ultricies. Integer malesuada non felis sit amet facilisis. Sed congue ut dolor sit amet pellentesque. Nunc tortor justo, maximus ac tempus nec, euismod porta felis. Ut finibus pulvinar tortor, vel finibus tellus molestie vitae. Ut id leo nulla. Suspendisse eget justo mauris.</p>
+
+      <p>Duis consequat felis vitae iaculis iaculis. Donec ultrices pharetra velit, quis lacinia justo interdum vitae. Nulla non bibendum elit, vitae rutrum neque. Quisque ac imperdiet enim. Mauris eget metus eu lacus finibus sagittis in sit amet sapien. Duis ut nulla consectetur erat facilisis porttitor. Vestibulum fringilla lobortis massa. Quisque vitae est sed nulla mattis fringilla. Etiam tempor id diam sed rhoncus. Donec ornare tortor orci. Proin sagittis, neque vitae facilisis gravida, magna mauris rhoncus risus, in lacinia urna sem sed ante. Etiam suscipit commodo diam sit amet dapibus. Nam pulvinar nisl ac lectus auctor ullamcorper ut et odio. Ut dictum faucibus neque, vel porttitor lectus venenatis at. Aliquam vestibulum massa nec nunc ullamcorper facilisis. In consequat lorem sit amet dictum efficitur.</p>
+
+      
+      <p>Suspendisse eu sodales leo. Vivamus tincidunt eros sed neque volutpat venenatis. Fusce nec egestas urna, quis volutpat justo. Ut feugiat, lacus sit amet tincidunt luctus, erat lacus dignissim nisi, vel aliquet justo urna a odio. Phasellus vel tortor eu est tempus congue. Sed pharetra libero arcu, ac maximus sem molestie nec. Sed mi nibh, vulputate nec imperdiet non, hendrerit quis purus. Curabitur hendrerit mi ac mauris tristique, in maximus massa bibendum. Nulla neque quam, sagittis quis tincidunt a, ullamcorper a lorem. Nam at risus non nunc mollis sollicitudin. Integer feugiat fringilla diam in dictum. Nulla id est ornare, congue magna ut, eleifend ante.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor varius cursus. Suspendisse dignissim feugiat odio, at laoreet felis lobortis pulvinar. Nullam porta tempor viverra. Ut quis ex eu nunc hendrerit feugiat. Proin viverra, neque et convallis volutpat, risus sapien convallis nulla, id volutpat mi nisl in nisl. Etiam placerat vehicula tellus a posuere. Phasellus fermentum luctus sem id lobortis. Integer lectus mi, dignissim non mi eget, eleifend mattis eros. Aliquam rhoncus mi ac magna hendrerit ornare. Phasellus libero est, volutpat nec leo euismod, commodo consectetur dolor. Sed venenatis lacinia sollicitudin. Praesent vulputate dolor felis, ut ullamcorper erat pulvinar non. Aliquam scelerisque lacus rhoncus, sollicitudin ligula ornare, ornare ex. Vivamus sed lorem aliquam, tincidunt metus quis, interdum erat. Suspendisse potenti.</p>
+
+      <p>Aliquam scelerisque dolor vel arcu viverra ultrices. Nulla faucibus, magna vitae vulputate sollicitudin, leo urna vehicula nibh, et convallis neque sapien quis erat. Integer vel luctus dolor. Nam malesuada nulla pellentesque felis congue ornare. Morbi consequat, magna in finibus tincidunt, ante erat facilisis tortor, non posuere nisl arcu sagittis elit. Sed sed mattis purus. Sed in velit sapien. Pellentesque vel placerat dolor. Vestibulum in nisi diam. Etiam condimentum dui felis, ut ultricies magna porta eget. Quisque eros risus, pretium at purus quis, facilisis posuere odio. Morbi pharetra iaculis elit ac venenatis. Donec varius semper nisi ac congue.</p>
+
+      <p>Vestibulum pharetra turpis urna, nec fringilla eros bibendum mattis. Duis hendrerit turpis metus, a rhoncus neque vestibulum tincidunt. Morbi fringilla justo nec eros ornare vehicula ut id ipsum. Mauris eu ultrices mi. Aenean sed sapien nisi. Pellentesque tempus auctor nulla id venenatis. Ut mattis nulla et enim rutrum mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce tincidunt at nisi eget ultricies. Integer malesuada non felis sit amet facilisis. Sed congue ut dolor sit amet pellentesque. Nunc tortor justo, maximus ac tempus nec, euismod porta felis. Ut finibus pulvinar tortor, vel finibus tellus molestie vitae. Ut id leo nulla. Suspendisse eget justo mauris.</p>
+
+      <p>Duis consequat felis vitae iaculis iaculis. Donec ultrices pharetra velit, quis lacinia justo interdum vitae. Nulla non bibendum elit, vitae rutrum neque. Quisque ac imperdiet enim. Mauris eget metus eu lacus finibus sagittis in sit amet sapien. Duis ut nulla consectetur erat facilisis porttitor. Vestibulum fringilla lobortis massa. Quisque vitae est sed nulla mattis fringilla. Etiam tempor id diam sed rhoncus. Donec ornare tortor orci. Proin sagittis, neque vitae facilisis gravida, magna mauris rhoncus risus, in lacinia urna sem sed ante. Etiam suscipit commodo diam sit amet dapibus. Nam pulvinar nisl ac lectus auctor ullamcorper ut et odio. Ut dictum faucibus neque, vel porttitor lectus venenatis at. Aliquam vestibulum massa nec nunc ullamcorper facilisis. In consequat lorem sit amet dictum efficitur.</p>
+
+      <p>Suspendisse eu sodales leo. Vivamus tincidunt eros sed neque volutpat venenatis. Fusce nec egestas urna, quis volutpat justo. Ut feugiat, lacus sit amet tincidunt luctus, erat lacus dignissim nisi, vel aliquet justo urna a odio. Phasellus vel tortor eu est tempus congue. Sed pharetra libero arcu, ac maximus sem molestie nec. Sed mi nibh, vulputate nec imperdiet non, hendrerit quis purus. Curabitur hendrerit mi ac mauris tristique, in maximus massa bibendum. Nulla neque quam, sagittis quis tincidunt a, ullamcorper a lorem. Nam at risus non nunc mollis sollicitudin. Integer feugiat fringilla diam in dictum. Nulla id est ornare, congue magna ut, eleifend ante.</p>
+      <p>Suspendisse eu sodales leo. Vivamus tincidunt eros sed neque volutpat venenatis. Fusce nec egestas urna, quis volutpat justo. Ut feugiat, lacus sit amet tincidunt luctus, erat lacus dignissim nisi, vel aliquet justo urna a odio. Phasellus vel tortor eu est tempus congue. Sed pharetra libero arcu, ac maximus sem molestie nec. Sed mi nibh, vulputate nec imperdiet non, hendrerit quis purus. Curabitur hendrerit mi ac mauris tristique, in maximus massa bibendum. Nulla neque quam, sagittis quis tincidunt a, ullamcorper a lorem. Nam at risus non nunc mollis sollicitudin. Integer feugiat fringilla diam in dictum. Nulla id est ornare, congue magna ut, eleifend ante.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor varius cursus. Suspendisse dignissim feugiat odio, at laoreet felis lobortis pulvinar. Nullam porta tempor viverra. Ut quis ex eu nunc hendrerit feugiat. Proin viverra, neque et convallis volutpat, risus sapien convallis nulla, id volutpat mi nisl in nisl. Etiam placerat vehicula tellus a posuere. Phasellus fermentum luctus sem id lobortis. Integer lectus mi, dignissim non mi eget, eleifend mattis eros. Aliquam rhoncus mi ac magna hendrerit ornare. Phasellus libero est, volutpat nec leo euismod, commodo consectetur dolor. Sed venenatis lacinia sollicitudin. Praesent vulputate dolor felis, ut ullamcorper erat pulvinar non. Aliquam scelerisque lacus rhoncus, sollicitudin ligula ornare, ornare ex. Vivamus sed lorem aliquam, tincidunt metus quis, interdum erat. Suspendisse potenti.</p>
+
+      <p>Aliquam scelerisque dolor vel arcu viverra ultrices. Nulla faucibus, magna vitae vulputate sollicitudin, leo urna vehicula nibh, et convallis neque sapien quis erat. Integer vel luctus dolor. Nam malesuada nulla pellentesque felis congue ornare. Morbi consequat, magna in finibus tincidunt, ante erat facilisis tortor, non posuere nisl arcu sagittis elit. Sed sed mattis purus. Sed in velit sapien. Pellentesque vel placerat dolor. Vestibulum in nisi diam. Etiam condimentum dui felis, ut ultricies magna porta eget. Quisque eros risus, pretium at purus quis, facilisis posuere odio. Morbi pharetra iaculis elit ac venenatis. Donec varius semper nisi ac congue.</p>
+
+      <p>Vestibulum pharetra turpis urna, nec fringilla eros bibendum mattis. Duis hendrerit turpis metus, a rhoncus neque vestibulum tincidunt. Morbi fringilla justo nec eros ornare vehicula ut id ipsum. Mauris eu ultrices mi. Aenean sed sapien nisi. Pellentesque tempus auctor nulla id venenatis. Ut mattis nulla et enim rutrum mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce tincidunt at nisi eget ultricies. Integer malesuada non felis sit amet facilisis. Sed congue ut dolor sit amet pellentesque. Nunc tortor justo, maximus ac tempus nec, euismod porta felis. Ut finibus pulvinar tortor, vel finibus tellus molestie vitae. Ut id leo nulla. Suspendisse eget justo mauris.</p>
+
+      <p>Duis consequat felis vitae iaculis iaculis. Donec ultrices pharetra velit, quis lacinia justo interdum vitae. Nulla non bibendum elit, vitae rutrum neque. Quisque ac imperdiet enim. Mauris eget metus eu lacus finibus sagittis in sit amet sapien. Duis ut nulla consectetur erat facilisis porttitor. Vestibulum fringilla lobortis massa. Quisque vitae est sed nulla mattis fringilla. Etiam tempor id diam sed rhoncus. Donec ornare tortor orci. Proin sagittis, neque vitae facilisis gravida, magna mauris rhoncus risus, in lacinia urna sem sed ante. Etiam suscipit commodo diam sit amet dapibus. Nam pulvinar nisl ac lectus auctor ullamcorper ut et odio. Ut dictum faucibus neque, vel porttitor lectus venenatis at. Aliquam vestibulum massa nec nunc ullamcorper facilisis. In consequat lorem sit amet dictum efficitur.</p>
+
+      <p>Suspendisse eu sodales leo. Vivamus tincidunt eros sed neque volutpat venenatis. Fusce nec egestas urna, quis volutpat justo. Ut feugiat, lacus sit amet tincidunt luctus, erat lacus dignissim nisi, vel aliquet justo urna a odio. Phasellus vel tortor eu est tempus congue. Sed pharetra libero arcu, ac maximus sem molestie nec. Sed mi nibh, vulputate nec imperdiet non, hendrerit quis purus. Curabitur hendrerit mi ac mauris tristique, in maximus massa bibendum. Nulla neque quam, sagittis quis tincidunt a, ullamcorper a lorem. Nam at risus non nunc mollis sollicitudin. Integer feugiat fringilla diam in dictum. Nulla id est ornare, congue magna ut, eleifend ante.</p>
+    </div>
+    <div class="sidebar-column column-3">
+      <div id="long-column">
+        <h2>Third Column: Long</h2>
+        <p>This div sticks to the bottom and the top and should follow your scrolling intuitively. It also has different marginBottom and martinTop declared.</p>
+        <p>It uses the following code:
+        <p>
+        <code class="block">
+           $('#long-column').stickable({<br>
+          marginTop: 20,<br>
+          marginBottom: 100,<br>
+          bottomId: 'footer'<br>
+        });
+        </code>
+        </p>
+        <p><img src="http://photos-g.ak.instagram.com/hphotos-ak-xap1/1168687_255781181243870_47252115_n.jpg"></p>
+        
+        <p>Aliquam scelerisque dolor vel arcu viverra ultrices. Nulla faucibus, magna vitae vulputate sollicitudin, leo urna vehicula nibh.</p>
+        <hr>
+        <p class="center"><a href="#" class="expand btn">Expand</a></p>
+        <div class="hidden"><img src="http://photos-b.ak.instagram.com/hphotos-ak-xpa1/10683935_1496983817208289_2002433346_n.jpg"></div>
+        <hr>
+        <p>Vestibulum pharetra turpis urna, nec fringilla eros bibendum mattis. Duis hendrerit turpis metus, a rhoncus neque vestibulum tincidunt. Morbi fringilla justo nec eros ornare vehicula ut id ipsum. Mauris eu ultrices mi. Aenean sed sapien nisi. Pellentesque tempus auctor nulla id venenatis. Ut mattis nulla et enim rutrum mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce tincidunt at nisi eget ultricies. Integer malesuada non felis sit amet facilisis. Sed congue ut dolor sit amet pellentesque. Nunc tortor justo, maximus ac tempus nec, euismod porta felis. Ut finibus pulvinar tortor, vel finibus tellus molestie vitae. Ut id leo nulla. Suspendisse eget justo mauris.</p>
+        <p>Duis consequat felis vitae iaculis iaculis. Donec ultrices pharetra velit, quis lacinia justo interdum vitae. Nulla non bibendum elit, vitae rutrum neque. Quisque ac imperdiet enim. Mauris eget metus eu lacus finibus sagittis in sit amet sapien. Duis ut nulla consectetur erat facilisis porttitor. Vestibulum fringilla lobortis massa. Quisque vitae est sed nulla mattis fringilla. Etiam tempor id diam sed rhoncus. Donec ornare tortor orci. Proin sagittis, neque vitae facilisis gravida, magna mauris rhoncus risus, in lacinia urna sem sed ante. Etiam suscipit commodo diam sit amet dapibus. Nam pulvinar nisl ac lectus auctor ullamcorper ut et odio. Ut dictum faucibus neque, vel porttitor lectus venenatis at. Aliquam vestibulum massa nec nunc ullamcorper facilisis. In consequat lorem sit amet dictum efficitur.</p>
+        <p>Aliquam scelerisque dolor vel arcu viverra ultrices. Nulla faucibus, magna vitae vulputate sollicitudin, leo urna vehicula nibh.</p>
+        <p class="center"><a href="#" class="expand btn">Expand</a></p>
+        <div class="hidden"><img src="http://photos-b.ak.instagram.com/hphotos-ak-xpa1/10683935_1496983817208289_2002433346_n.jpg"></div>
+      </div>
+      
+    </div>
+  </div>
+<footer id="footer">
+  Brought to you by the folks at<br>
+  <a href="http://www.zaneray.com"><img src="demo/images/ZR-logo-white.png" alt="The ZaneRay Group"></a> 
+</footer>
+
+
+</div>
+<div class="background"></div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/stickable.js"></script>
+    <script>
+      $(window).load(function(){
+        $('#short-column').stickable({
+          margin: 20,
+          bottomId: 'footer'
+        });
+        $('#long-column').stickable({
+          marginTop: 20,
+          marginBottom: 100,
+          bottomId: 'footer'
+        });
+
+        $('.expand').on('click',function(e){
+          e.preventDefault();
+          $(this).parents().next('.hidden').slideToggle(function(){
+            $('#long-column').stickable.reset();
+            $('#short-column').stickable.reset();
+          });
+        });
+
+      });
+
+    </script>
+  </body>
+</html>
+
