@@ -72,10 +72,7 @@
       windowTop = $window.scrollTop(); 
       elHeight = $el.outerHeight();
       elOffset = $el.parent().offset().top;
-      console.log(' reset bottomOffset1: ' + bottomOffset);
-      console.log('reset bottom offset for reals: ' + $bottom.offset().top);
       bottomOffset = $bottom.offset().top; 
-      console.log(' reset bottomOffset2: ' + bottomOffset);
       dynamicTopPosition = $el.offset().top - elOffset;
       upStart = dynamicTopPosition + elOffset + options.marginTop;
       shortBottomPosition = bottomOffset - elOffset - elHeight -  options.marginBottom,
@@ -141,9 +138,6 @@
             //console.log('FIXED TOP \n remove stickable-fixed-bottom,stickable-absolute \n top: auto \n bottom: auto \n ===============');
           }
         } else {
-
-
-
 
           /********************************************
            FIXED BOTTOM
