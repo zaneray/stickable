@@ -68,16 +68,21 @@
     /*method that can reset all the demensions for the plugin. useful if anything changes the 
     dimensions of the page or the sticky Element. */
     $.fn.stickable.reset = function() {
-      console.log('reset called');
+      $window.off('scroll',scrollSticky); //turn if off
+      windowTop = $window.scrollTop(); 
       elHeight = $el.outerHeight();
       elOffset = $el.parent().offset().top;
+      console.log(' reset bottomOffset1: ' + bottomOffset);
+      console.log('reset bottom offset for reals: ' + $bottom.offset().top);
       bottomOffset = $bottom.offset().top; 
+      console.log(' reset bottomOffset2: ' + bottomOffset);
       dynamicTopPosition = $el.offset().top - elOffset;
       upStart = dynamicTopPosition + elOffset + options.marginTop;
       shortBottomPosition = bottomOffset - elOffset - elHeight -  options.marginBottom,
       upEnd = elOffset;
       downStart = elOffset + elHeight + dynamicTopPosition + options.marginBottom - winHeight;
       downEnd = bottomOffset - winHeight;
+      $window.on('scroll',scrollSticky); //turn if off
       $window.trigger('scroll'); 
     };
 
@@ -112,19 +117,7 @@
            than the window
            ********************************************/
           if (elOffset < windowTop + options.marginTop) {
-            //dynamicTopPosition = $el.offset().top  + options.marginBottom;
-            //downStart = elOffset +  dynamicTopPosition + elHeight + options.marginTop + options.marginBottom - winHeight;
-             console.log('__________________');
-            //console.log('dynamicTopPosition: ' + dynamicTopPosition);
-            bottomTrigger = bottomOffset - (elHeight + options.marginBottom + options.marginTop);
-            //console.log('dynamicTopPosition: ' + dynamicTopPosition);
-            //console.log('downStart: ' + downStart);
-            console.log('bottomOffset: ' + bottomOffset);
-            //console.log('bottomTrigger: ' + bottomTrigger);
-            //console.log('elHeight: ' + elHeight);
-            //if (dynamicTopPosition > bottomTrigger) {
             if((windowTop + elHeight  + options.marginBottom  + options.marginTop) > bottomOffset){
-              console.log('step 2 Eureka!');
 
               $el.addClass('stickable-absolute').removeClass('stickable-fixed-top').removeClass('stickable-fixed-bottom').css({
                 'top': shortBottomPosition + 'px',
@@ -294,20 +287,31 @@
         scrollSticky();
       }
 
+      var resizeEvent = 'resize';
       //resize with a simple throttling function built in.
       if(isTouch){
-        var resizeTimeout;
-        $window.on('resize orientationchange', function(){
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(stickyResize, 200);
-        });
+        resizeEvent = 'resize orientationchange';
+      }
+
+      var resizeTimeout;
+      $window.on(resizeEvent, function(){
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(stickyResize, 200);
+      });
         
-      }
-      else {      
-        $window.on('resize', function(){
-          stickyResize();  
-        });      
-      }
+      // }
+      // else {      
+      //   $window.on('resize', function(){
+      //     stickyResize();  
+      //   });  
+
+
+      //   var resizeTimeout;
+      //   $window.on('resize ', function(){
+      //     clearTimeout(resizeTimeout);
+      //     resizeTimeout = setTimeout(stickyResize, 200);
+      //   });    
+      // }
 
     } // end if (this.length > 0)
 
