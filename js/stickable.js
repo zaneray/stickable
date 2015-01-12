@@ -61,6 +61,7 @@
       stickyActive = false;
       $el.removeAttr('style').removeClass("stickable-absolute").removeClass("stickable-fixed-top").removeClass("stickable-fixed");
       $elParent.removeClass("stickable-parent");
+      $el.css('top','auto');
       $window.off('scroll', scrollSticky);
     };
 
@@ -79,7 +80,8 @@
       upEnd = elOffset;
       downStart = elOffset + elHeight + dynamicTopPosition + options.marginBottom - winHeight;
       downEnd = bottomOffset - winHeight;
-      $window.on('scroll',scrollSticky); //turn if off
+      
+      initSticky();
       $window.trigger('scroll'); 
     };
 
@@ -91,6 +93,7 @@
     if (this.length > 0) { //check if it exists. 
       
       var scrollSticky = function() { 
+
         //elTopPosition needs to be scoped to this because we have multiple elements that can be sticky.
         var elTopPosition = parseInt(bottomOffset - elHeight - elOffset - options.marginBottom);
         var bottomTrigger = bottomOffset - (elHeight + options.marginBottom)
@@ -232,23 +235,31 @@
 
       //initSticky() function that initializes stickable
       var initSticky = function() {
-        stickyActive = true;
-        $elParent.addClass('stickable-parent');
-        $el.outerWidth($elParent.outerWidth());
-        if ((elHeight + (options.marginTop  + options.marginBottom)) < winHeight) {
-          //bigger than the window
-          fixedTop = true;
-        } else {
-          //smaller than the window
-          fixedTop = false;
-        }
+        //first we check if the sticky element is smaller than the 
+        //parent space around it. If it is not do nothing
 
-        $window.on('scroll', scrollSticky);
+        if(elHeight + options.marginTop + options.marginBottom + 2 < (bottomOffset - elOffset)) {
+          stickyActive = true;
+          $elParent.addClass('stickable-parent');
+          $el.outerWidth($elParent.outerWidth());
+          if ((elHeight + (options.marginTop  + options.marginBottom)) < winHeight) {
+            //bigger than the window
+            fixedTop = true;
+          } else {
+            //smaller than the window
+            fixedTop = false;
+          }
 
-        //if we're scrolled down the page trigger a scroll so that it sets the sticky in the right place
-        if(windowTop > 0) {
-          $window.scrollTop(windowTop + 1);
-        }
+          $window.on('scroll', scrollSticky);
+
+          //if we're scrolled down the page trigger a scroll so that it sets the sticky in the right place
+          if(windowTop > 0) {
+            $window.scrollTop(windowTop + 1);
+          }
+        } 
+        else {
+          destroySticky();
+        }// end  if(elHeight < (bottomOffset - elOffset)) {
       };
       //end initSticky();
 
@@ -292,21 +303,6 @@
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(stickyResize, 200);
       });
-        
-      // }
-      // else {      
-      //   $window.on('resize', function(){
-      //     stickyResize();  
-      //   });  
-
-
-      //   var resizeTimeout;
-      //   $window.on('resize ', function(){
-      //     clearTimeout(resizeTimeout);
-      //     resizeTimeout = setTimeout(stickyResize, 200);
-      //   });    
-      // }
-
     } // end if (this.length > 0)
 
     
