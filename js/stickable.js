@@ -7,7 +7,6 @@
     //detect if we are using respond if not then detect support for matchmedia
     //then kill all the additional stickable methods
     if(!window.matchMedia || typeof respond == 'object') {
-      alert('no match media.');
       $.fn.stickable.reset = function(){};
       $.fn.stickable.destroy = function(){};
       return false;
