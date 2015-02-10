@@ -41,6 +41,7 @@
         windowTop           = $window.scrollTop(), 
         stickyActive        = false, 
         fixedTop            = true, 
+        windowWidth         = window.innerWidth,
         winHeight           = $window.height(), 
         winWidth            = $window.width(),  
         elOffset            = $elParent.offset().top, 
@@ -274,8 +275,7 @@
 
       //called to reinit and fix stuff when you resize you sticky sidebar. 
       var stickyResize = function(){
-        winWidth = $window.width();
-        if (winWidth >= options.stickyBreakpoint) {
+        if (windowWidth >= options.stickyBreakpoint) {
           $(this).stickable.reset();
           //continue we are at a larger screen
           if (stickyActive === false) {
@@ -285,13 +285,13 @@
             //just resizing no biggie            
             $el.outerWidth($elParent.width());
           }
-        } else if (winWidth < options.stickyBreakpoint && stickyActive === true) {
+        } else if (windowWidth < options.stickyBreakpoint && stickyActive === true) {
           destroySticky();
         }
       };
 
       //do this on $window.load(); if the window Width is larger than the sticky breakpoint fire it up. 
-      if (winWidth >= options.stickyBreakpoint) {
+      if (windowWidth >= options.stickyBreakpoint) {
         //continue we are at a larger screen
         initSticky();
       }
