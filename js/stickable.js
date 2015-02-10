@@ -275,6 +275,7 @@
 
       //called to reinit and fix stuff when you resize you sticky sidebar. 
       var stickyResize = function(){
+        var windowWidth = window.innerWidth;
         if (windowWidth >= options.stickyBreakpoint) {
           $(this).stickable.reset();
           //continue we are at a larger screen
