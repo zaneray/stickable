@@ -90,7 +90,6 @@
       upEnd = elOffset;
       downStart = elOffset + elHeight + dynamicTopPosition + options.marginBottom - winHeight;
       downEnd = bottomOffset - winHeight;
-      
       initSticky();
       $window.trigger('scroll'); 
     };
@@ -103,6 +102,9 @@
     if (this.length > 0) { //check if it exists. 
       
       var scrollSticky = function() { 
+        if(windowWidth < options.stickyBreakpoint) {
+          return false;
+        }
 
         //elTopPosition needs to be scoped to this because we have multiple elements that can be sticky.
         var elTopPosition = parseInt(bottomOffset - elHeight - elOffset - options.marginBottom);
@@ -275,7 +277,7 @@
 
       //called to reinit and fix stuff when you resize you sticky sidebar. 
       var stickyResize = function(){
-        var windowWidth = window.innerWidth;
+        windowWidth = window.innerWidth;
         if (windowWidth >= options.stickyBreakpoint) {
           $(this).stickable.reset();
           //continue we are at a larger screen
